@@ -14,6 +14,9 @@
         <!-- Navigation -->         
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav"> 
             <div class="container"> 
+                <?php if ( ! has_custom_logo() ) : ?>
+                    <a class="navbar-brand js-scroll-trigger" href="<?php echo esc_url( get_home_url() ); ?>"><?php bloginfo( 'name' ); ?></a>
+                <?php endif; ?>
                 <a class="navbar-brand js-scroll-trigger" href="#page-top">
                     <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/SHCC-logo.png">
                 </a>                 
