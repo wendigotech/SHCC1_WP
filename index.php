@@ -21,15 +21,16 @@
                     <?php _e( 'Menu', 'shcc_wp' ); ?> 
                     <i class="fa fa-bars"></i> 
                 </button>                 
-                <?php wp_nav_menu( array(
-                        'menu_class' => 'collapse navbar-collapse',
-                        'menu_id' => 'navbarResponsive',
-                        'container' => '',
-                        'depth' => '2',
-                        'theme_location' => 'primary',
-                        'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-                        'walker' => new wp_bootstrap_navwalker()
-                ) ); ?> 
+                <div class="collapse navbar-collapse" id="navbarResponsive"> 
+                    <?php wp_nav_menu( array(
+                            'menu_class' => 'navbar-nav text-uppercase ml-auto',
+                            'container' => '',
+                            'depth' => '2',
+                            'theme_location' => 'primary',
+                            'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+                            'walker' => new wp_bootstrap_navwalker()
+                    ) ); ?> 
+                </div>                 
             </div>             
         </nav>         
         <!-- Header -->         
