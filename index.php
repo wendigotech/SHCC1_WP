@@ -14,9 +14,11 @@
         <!-- Navigation -->         
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav"> 
             <div class="container"> 
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/SHCC-logo.png">
-                </a>                 
+                <?php if ( ! has_custom_logo() ) : ?>
+                    <a class="navbar-brand js-scroll-trigger" href="<?php echo esc_url( get_home_url() ); ?>"><?php bloginfo( 'name' ); ?></a>
+                <?php else : ?>
+                    <?php pg_starter_the_custom_logo() ?>
+                <?php endif; ?> 
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> 
                     <?php _e( 'Menu', 'shcc_wp' ); ?> 
                     <i class="fa fa-bars"></i> 
