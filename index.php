@@ -33,7 +33,8 @@
             </div>             
         </nav>         
         <!-- Header -->         
-        <header class="masthead"> 
+        <?php $image_attributes = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' ) : null; ?>
+        <header class="masthead" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"> 
             <div class="container"> 
                 <div class="row"> 
                     <div class="col-md-6 left"> 
