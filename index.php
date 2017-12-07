@@ -14,9 +14,9 @@
         <!-- Navigation -->         
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav"> 
             <div class="container"> 
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/SHCC-logo.png">
-                </a>                 
+                <?php if ( has_custom_logo() ) : ?>
+                    <a class="navbar-brand js-scroll-trigger" href="<?php echo esc_url( get_home_url() ); ?>"><?php bloginfo( 'name' ); ?></a>
+                <?php endif; ?> 
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> 
                     <?php _e( 'Menu', 'shcc_wp' ); ?> 
                     <i class="fa fa-bars"></i> 
@@ -34,7 +34,7 @@
         </nav>         
         <!-- Header -->         
         <?php $image_attributes = (is_singular() || in_the_loop()) ? wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' ) : null; ?>
-        <header class="masthead" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>"> 
+        <header class="masthead" style="<?php if($image_attributes) echo 'background-image:url(\''.$image_attributes[0].'\')' ?>;color:<?php echo '#'.get_header_textcolor() ?>;"> 
             <div class="container"> 
                 <div class="row"> 
                     <div class="col-md-6 left"> 
