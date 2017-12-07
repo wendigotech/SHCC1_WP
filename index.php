@@ -22,14 +22,16 @@
                     <i class="fa fa-bars"></i> 
                 </button>                 
                 <div class="collapse navbar-collapse" id="navbarResponsive"> 
-                    <?php wp_nav_menu( array(
-                            'menu_class' => 'navbar-nav text-uppercase ml-auto',
-                            'container' => '',
-                            'depth' => '2',
-                            'theme_location' => 'primary',
-                            'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-                            'walker' => new wp_bootstrap_navwalker()
-                    ) ); ?> 
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <?php wp_nav_menu( array(
+                                'menu_class' => 'navbar-nav text-uppercase ml-auto',
+                                'container' => '',
+                                'depth' => '2',
+                                'theme_location' => 'primary',
+                                'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+                                'walker' => new wp_bootstrap_navwalker()
+                        ) ); ?>
+                    </ul>                     
                 </div>                 
             </div>             
         </nav>         
